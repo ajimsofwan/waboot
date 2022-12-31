@@ -1,0 +1,25 @@
+{
+  "name": "whatsapibot_1.0.0_linux_amd64",
+  "version": "1.0.0",
+
+  "scripts": {
+
+    "start": "concurrently \"npm run bot\" \"NODE_ENV=prod node ./src/server.js\"",
+
+    "start-dev": "concurrently \"npm run bot\" \"nodemon ./src/server.js\"",
+
+    "bot": "WEBHOOK_SERVER=http://localhost:5000/webhook  PORT=3000 ./whatsapibot"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "concurrently": "^7.6.0",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
